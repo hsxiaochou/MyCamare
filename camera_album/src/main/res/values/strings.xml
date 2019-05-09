@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Camera_Album</string>
+    <string name="touch_to_focus">请放正凭证，并调整好光线</string>
+    <string name="crop_fail">裁剪失败</string>
+</resources>
