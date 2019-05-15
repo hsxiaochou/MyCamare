@@ -65,7 +65,6 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         if (camera != null) {
             try {
                 camera.setPreviewDisplay(holder);
-
                 Camera.Parameters parameters = camera.getParameters();
                 if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
                     //竖屏拍照时，需要设置旋转90度，否者看到的相机预览方向和界面方向不相同
@@ -168,11 +167,16 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             camera.stopPreview();
             camera.release();
             camera = null;
-
             if (mAutoFocusManager != null) {
                 mAutoFocusManager.stop();
                 mAutoFocusManager = null;
             }
+            if (mSensorControler != null) {
+                mSensorControler.unlockFocus();
+                mSensorControler.onStop();
+                mSensorControler = null;
+            }
+
         }
     }
 

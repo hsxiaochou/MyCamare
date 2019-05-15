@@ -229,7 +229,11 @@ public class CameraActivity extends Activity implements View.OnClickListener {
         } else if (id == R.id.iv_camera_close) {
             finish();
         } else if (id == R.id.iv_camera_take) {
-            takePhoto();
+            try {
+                takePhoto();
+            } catch (Exception e) {
+
+            }
         } else if (id == R.id.iv_camera_flash) {
             Intent openAlbumIntent = new Intent(Intent.ACTION_PICK);
             openAlbumIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");

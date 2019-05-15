@@ -193,8 +193,4 @@ public class SensorControler implements SensorEventListener {
         this.mCameraFocusListener = mCameraFocusListener;
     }
 
-    public void unCameraFocusListener(CameraFocusListener mCameraFocusListener) {
-
-
-    }
 }
